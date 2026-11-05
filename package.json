@@ -1,0 +1,55 @@
+{
+  "name": "vscode-ext-unique-editor-groups",
+  "displayName": "Unique Editor Groups",
+  "description": "Prevents the same file from remaining open in multiple VS Code editor groups by returning focus to its original group.",
+  "version": "1.0.0",
+  "publisher": "viiinzzz",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viiinzzz/vscode-ext-unique-editor-groups"
+  },
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "uniqueEditorGroups.toggle",
+        "title": "Unique Editor Groups: Toggle Protection"
+      }
+    ],
+    "configuration": {
+      "title": "Unique Editor Groups",
+      "properties": {
+        "uniqueEditorGroups.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Redirect duplicate file openings to the editor group that already contains the file."
+        },
+        "uniqueEditorGroups.warnOnDirtyDuplicate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show a warning instead of closing a duplicate editor if its document has unsaved changes."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "test": "node --test",
+        "build": "npx @vscode/vsce package --allow-missing-repository --allow-star-activation",
+    "install": "node scripts/install.js",
+    "reload": "code --open-url vscode://viiinzzz.vscode-ext-unique-editor-groups/reload",
+    "deploy": "npm run build && npm run install && npm run reload",
+    "release:minor": "node scripts/release.js minor",
+    "release:major": "node scripts/release.js major"
+
+  }
+}

@@ -1,0 +1,6 @@
+.vscode/**
+*.vsix
+.gitignore
+scripts/**
+test/**
+TEST-RESULTS.txt
