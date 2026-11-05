@@ -1,0 +1,36 @@
+TAP version 13
+# Subtest: finds an existing editor for the same URI in another group
+ok 1 - finds an existing editor for the same URI in another group
+  ---
+  duration_ms: 0.886311
+  type: 'test'
+  ...
+# Subtest: does not treat different files as duplicates
+ok 2 - does not treat different files as duplicates
+  ---
+  duration_ms: 0.151377
+  type: 'test'
+  ...
+# Subtest: does not report a duplicate when only the active editor exists
+ok 3 - does not report a duplicate when only the active editor exists
+  ---
+  duration_ms: 0.091267
+  type: 'test'
+  ...
+# Subtest: handles editors without a document URI
+ok 4 - handles editors without a document URI
+  ---
+  duration_ms: 0.090225
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 63.629029
+
+Exit code: 0
