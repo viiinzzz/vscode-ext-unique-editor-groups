@@ -2,7 +2,7 @@
   "name": "vscode-ext-unique-editor-groups",
   "displayName": "Unique Editor Groups",
   "description": "Prevents the same file from remaining open in multiple VS Code editor groups by returning focus to its original group.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "viiinzzz",
   "repository": {
     "type": "git",
@@ -44,12 +44,11 @@
   },
   "scripts": {
     "test": "node --test",
-        "build": "npx @vscode/vsce package --allow-missing-repository --allow-star-activation",
+    "build": "npx @vscode/vsce package --allow-missing-repository --allow-star-activation",
     "install": "node scripts/install.js",
     "reload": "code --open-url vscode://viiinzzz.vscode-ext-unique-editor-groups/reload",
     "deploy": "npm run build && npm run install && npm run reload",
     "release:minor": "node scripts/release.js minor",
     "release:major": "node scripts/release.js major"
-
   }
 }
